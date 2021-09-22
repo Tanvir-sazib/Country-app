@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+   <div class="app-wrapper pt-5 d-flex justify-content-center align-items-center">
+    <div class="w-75" ng-app="myApp" ng-controller="countryController">
+        <h3 class="text-white pb-1 pt-5 text-center text-uppercase">Search by country name:</h3>
+        <input type="text" class="form-control input-text" ng-model='countryName' >
+        <div class="d-flex justify-content-center pt-2">
+            <button class="btn btn-warning px-5 py-2" ng-click="loadCountry(countryName)">Search</button>
+        </div>
+        <div ng-show="isloading" class="text-center text-white">
+            <p>loading...</p>
+        </div>
+        <div class="row" ng-hide="isloading">
+            <div ng-repeat="country in allData" class="col-lg-3 d-flex justify-content-center">
+            
+                <div class="card my-3"  style="width: 20rem; height: 27rem;">
+                    <img src={{country.flag}} class="card-img-top" style="height:12rem" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">{{country.name}}</h5>
+                        <p class="card-text"><span><b>Region</b></span> : <span>{{country.region}}</span></p>
+                        <p class="card-text"><span><b>Capital</b></span> : <span>{{country.capital}}</span></p>
+                        <p class="card-text"><span><b>Population</b></span> : <span>{{country.population}}</span></p>
+                        <button class="btn btn-outline-primary" ng-click="getCountry(country.name)">More Details...</button><br>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+   </div>
+   
+    <script src="./script.js"></script>
+       <!-- Angular Material Dependencies -->
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+       
+       <!-- Angular Material Javascript now available via Google CDN; version 1.2.1 used here -->
+       <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.js"></script>
+</body>
+</html>

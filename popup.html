@@ -1,0 +1,13 @@
+<div class="p-5">
+    <h3>{{country.name}}</h3>
+    <img style="width:50rem; height:30rem" src={{country.flag}} alt="">
+    <div class="pt-3">
+    <p class="card-text"><span><b>Capital</b></span> : <span>{{country.capital}}</span></p>
+    <p class="card-text"><span><b>Region</b></span> : <span>{{country.region}}</span></p>
+    <p class="card-text"><span><b>Population</b></span> : <span>{{country.population}}</span></p>
+    <p class="card-text"><span><b>Area</b></span> : <span>{{country.area}} SQ Km</span></p>
+    <p class="card-text"><span><b>Borders</b></span> : <span ng-repeat="border in country.borders">{{border}}, </span></p>
+    <p class="card-text"><span><b>Languages</b></span> : <span ng-repeat="lang in country.languages">{{lang.name}}, </span></p>
+
+    </div>
+</div>

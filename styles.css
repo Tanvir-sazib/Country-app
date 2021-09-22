@@ -1,0 +1,4 @@
+.app-wrapper {
+  background-image: url("./image/background.jpg");
+  min-height: 100vh;
+}
